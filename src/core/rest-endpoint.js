@@ -1,4 +1,4 @@
-export const REST_API = 'http://www.omdbapi.com';
-export const RESTTMP = 'https://restcountries.eu/rest/v2/all';
-export const PARAMS = '?s=star&=&r=json&plot=short';
-export const REST_API_CURRENCY = 'http://api.fixer.io/latest';
+export const REST_API = 'http://apilayer.net';
+export const LIVE = '/api/live';
+export const LIST_CURRENCIES = '/api/list';
+export const HISTORICAL = '/api/historical';
