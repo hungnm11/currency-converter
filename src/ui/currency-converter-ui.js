@@ -8,10 +8,10 @@ class CurrencyConvertUI extends React.Component {
     let columns;
     if (quotes) {
       columns = Object.keys( quotes ).map( (p,i) => {
-        return (<div key={p}>{p}  {quotes[p]}</div>);
+        return (<li key={p}>{p}  {quotes[p]}</li>);
       });
     }
-    
+
     return (
        <div className="row">
             <div className="col-md-4">
@@ -19,8 +19,10 @@ class CurrencyConvertUI extends React.Component {
             </div>
             <div className="col-md-8">
                 <div className="page-header">
-                    <h1>Currency <small>Converter</small></h1>
+                    <h1>Currency <small>Converter 1 USD</small></h1>
+                    <ul>
                     {columns}
+                    </ul>
                 </div>
             </div>
         </div>
