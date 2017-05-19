@@ -8,7 +8,8 @@ class CurrencyConvertUI extends React.Component {
     let columns;
     if (quotes) {
       columns = Object.keys( quotes ).map( (p,i) => {
-        return (<li key={p}>{p}  {quotes[p]}</li>);
+        const str = p.substring(3);
+        return (<li key={p}>USD = {str}  {quotes[p]}</li>);
       });
     }
 
