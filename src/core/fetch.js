@@ -1,4 +1,4 @@
-import {REST_API, RESTTMP, REST_API_CURRENCY} from './rest-endpoint';
+import {REST_API, LIVE, LIST_CURRENCIES, HISTORICAL} from './rest-endpoint';
 
 export const METHOD = {
   get: 'GET',
@@ -27,18 +27,11 @@ let $fetch = (urn, params, method = METHOD.get) => {
 
 };
 
-const params = {
-  name: 'jaja',
-  value: 234
-}
-
 function paramsToQuery(params) {
   return Object
     .keys(params)
     .map(key => `${key}=${params[key]}`)
     .join('&');
 }
-
-console.log(paramsToQuery(params));
 
 export default $fetch;
