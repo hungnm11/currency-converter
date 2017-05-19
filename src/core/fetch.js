@@ -1,4 +1,4 @@
-import {REST_API, LIVE, LIST_CURRENCIES, HISTORICAL} from './rest-endpoint';
+import {REST_API} from './rest-endpoint';
 
 export const METHOD = {
   get: 'GET',
