@@ -4,13 +4,14 @@ class CurrencyConvertUI extends React.Component {
 
   render() {
     console.log('PROPS: ', this.props);
-    const obj = this.props.quotes;
+    const quotes = this.props.quotes;
     let columns;
-    if (obj) {
-      columns = Object.keys( obj ).map( (p,i) => {
-        return (<div key={p}>{p}  {obj[p]}</div>);
+    if (quotes) {
+      columns = Object.keys( quotes ).map( (p,i) => {
+        return (<div key={p}>{p}  {quotes[p]}</div>);
       });
     }
+    
     return (
        <div className="row">
             <div className="col-md-4">
