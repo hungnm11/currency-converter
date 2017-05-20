@@ -16,7 +16,7 @@ class CurrencyConvertUI extends React.Component {
     return (
        <div className="row">
             <div className="col-md-4">
-                <p><img className="img-responsive" src="./images/logo.png" /></p>
+                <p><img className="img-responsive" src={require('../images/logo.png')} /></p>
             </div>
             <div className="col-md-8">
                 <div className="page-header">
