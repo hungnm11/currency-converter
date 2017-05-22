@@ -19,28 +19,34 @@ class CurrencyConvertUI extends React.Component {
                 <p><img className="img-responsive" src={require('../images/logo.png')} /></p>
             </div>
             <div className="col-md-8">
-                <div className="page-header">
-                    <h1>Currency <small>Converter 1 USD</small></h1>
-
-                    <form>
-                      <fieldset>
-                        <div className="form-group">
-                          <select id="disabledSelect" className="form-control" disabled>
-                            <option>USD</option>
-                          </select>
-                        </div>
-                        <div className="form-group">
-                          <select className="form-control" name="currencies">
-                            <option value='AED' title='United Arab Emirates Dirham'>AED</option>
-                          </select>
-                        </div>
-                      </fieldset>
-                    </form>
-                    
+              <div className="page-header">
+                <h1>Example page header <small>Subtext for header</small></h1>
+              </div>
+                <form className="form-horizontal">
+                  <div className="form-group">
+                  <div className="col-md-6 col-sm-6 col-xs-6">
+                    <input type="text" className="form-control" value="1" readOnly/>
+                  </div>
+                  <div className="col-md-6 col-sm-6 col-xs-6">
+                    <select className="form-control" disabled>
+                      <option value='USD' title='US Dollar'>USD</option>
+                    </select>
+                  </div>
+                  </div>
+                  <div className="form-group">
+                    <div className="col-md-6 col-sm-6 col-xs-6">
+                      <input type="text" className="form-control" />
+                    </div>
+                    <div className="col-md-6 col-sm-6 col-xs-6">
+                      <select className="form-control">
+                        <option value='USD' title='US Dollar'>USD</option>
+                      </select>
+                    </div>
+                  </div>
+                </form>
                     <ul>
                     {columns}
                     </ul>
-                </div>
             </div>
         </div>
     );
