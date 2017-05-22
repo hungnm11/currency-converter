@@ -5,11 +5,21 @@ class CurrencyConvertUI extends Component {
   render() {
     console.log('PROPS: ', this.props);
     const quotes = this.props.quotes;
+    const currencyList = this.props.currencies;
     let columns;
+    let currency;
     if (quotes) {
       columns = Object.keys( quotes ).map( (p,i) => {
         const str = p.substring(3);
         return (<li key={p}>USD => {str}:  <span className="currency-number">{quotes[p]}</span></li>);
+      });
+    }
+
+    if (currencyList) {
+      currency = Object.keys(currencyList).map((curr, i) => {
+        return (
+          <option value={curr} key={i} title={currencyList[curr]}>{curr}: {currencyList[curr]}</option>
+        );
       });
     }
 
@@ -39,11 +49,7 @@ class CurrencyConvertUI extends Component {
                     </div>
                     <div className="col-md-6 col-sm-6 col-xs-6">
                       <select className="form-control" onChange={this.props.onChange.bind(this)} >
-                        <option value='AED' title='United Arab Emirates Dirham'>AED</option>
-                        <option value='AFN' title='Afghan Afghani'>AFN</option>
-                        <option value='ALL' title='Albanian Lek'>ALL</option>
-                        <option value='AMD' title='Armenian Dram'>AMD</option>
-                        <option value='ANG' title='Netherlands Antillean Guilder'>ANG</option>
+                        { currency }
                       </select>
                     </div>
                   </div>
