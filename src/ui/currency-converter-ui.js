@@ -21,6 +21,22 @@ class CurrencyConvertUI extends React.Component {
             <div className="col-md-8">
                 <div className="page-header">
                     <h1>Currency <small>Converter 1 USD</small></h1>
+
+                    <form>
+                      <fieldset>
+                        <div className="form-group">
+                          <select id="disabledSelect" className="form-control" disabled>
+                            <option>USD</option>
+                          </select>
+                        </div>
+                        <div className="form-group">
+                          <select className="form-control" name="currencies">
+                            <option value='AED' title='United Arab Emirates Dirham'>AED</option>
+                          </select>
+                        </div>
+                      </fieldset>
+                    </form>
+                    
                     <ul>
                     {columns}
                     </ul>
