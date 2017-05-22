@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-class CurrencyConvertUI extends React.Component {
+class CurrencyConvertUI extends Component {
 
   render() {
     console.log('PROPS: ', this.props);
@@ -20,7 +20,7 @@ class CurrencyConvertUI extends React.Component {
             </div>
             <div className="col-md-8">
               <div className="page-header">
-                <h1>Example page header <small>Subtext for header</small></h1>
+                <h1>Currency <small>Converter</small></h1>
               </div>
                 <form className="form-horizontal">
                   <div className="form-group">
@@ -38,8 +38,12 @@ class CurrencyConvertUI extends React.Component {
                       <input type="text" className="form-control" />
                     </div>
                     <div className="col-md-6 col-sm-6 col-xs-6">
-                      <select className="form-control">
-                        <option value='USD' title='US Dollar'>USD</option>
+                      <select className="form-control" onChange={this.props.onChange.bind(this)} >
+                        <option value='AED' title='United Arab Emirates Dirham'>AED</option>
+                        <option value='AFN' title='Afghan Afghani'>AFN</option>
+                        <option value='ALL' title='Albanian Lek'>ALL</option>
+                        <option value='AMD' title='Armenian Dram'>AMD</option>
+                        <option value='ANG' title='Netherlands Antillean Guilder'>ANG</option>
                       </select>
                     </div>
                   </div>
