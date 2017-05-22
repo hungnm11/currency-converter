@@ -37,8 +37,16 @@ class CurrencyConvert extends React.Component {
   }
 
   processData() {
-    if (this.state.data) this.setState({ res: {} });
-    return this.state.res;
+    const data = {
+      
+    };
+
+    if (this.state.res) {
+      const res = this.state.res;  
+      data.quotes = res.quotes;
+      data.source = res.source;
+    }
+    return data;
   }
 
   render() {
