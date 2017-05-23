@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CurrencyTable from './currency-table-ui';
 
 class CurrencyConvertUI extends Component {
 
@@ -16,19 +17,10 @@ class CurrencyConvertUI extends Component {
   }
 
   render() {
-    console.log('PROPS: ', this.props);
-    const quotes = this.props.quotes;
     const currencyList = this.props.currencies;
     const rate = this.props.rate || 0;
     const time = this.props.timestamp;
-    let columns;
     let currency;
-    if (quotes) {
-      columns = Object.keys( quotes ).map( (p,i) => {
-        const str = p.substring(3);
-        return (<li key={p}>USD => {str}:  <span className="currency-number">{quotes[p]}</span></li>);
-      });
-    }
 
     if (currencyList) {
       currency = Object.keys(currencyList).map((curr, i) => {
@@ -40,13 +32,13 @@ class CurrencyConvertUI extends Component {
 
     return (
        <div className="row">
-            <div className="col-md-4">
+            <div className="col-md-4 col-sm-4 col-xs-12">
                 <p><img className="img-responsive" src={require('../images/logo.png')} /></p>
             </div>
-            <div className="col-md-8">
+            <div className="col-md-8 col-sm-8 col-xs-12">
               <div className="page-header">
                 <h1>Currency <small>Converter</small></h1>
-                Updated: { this.renderTime(time)}
+                Updated: { this.renderTime(time) }
               </div>
                 <form className="form-horizontal">
                   <div className="form-group">
@@ -71,9 +63,9 @@ class CurrencyConvertUI extends Component {
                     </div>
                   </div>
                 </form>
-                    <ul>
-                    {columns}
-                    </ul>
+            </div>
+            <div className="col-md-12 col-sm-12 col-xs-12">
+              <CurrencyTable {...this.props} />       
             </div>
         </div>
     );
