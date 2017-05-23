@@ -46,7 +46,7 @@ class CurrencyConvertUI extends Component {
             <div className="col-md-8">
               <div className="page-header">
                 <h1>Currency <small>Converter</small></h1>
-                { this.renderTime(time)}
+                Updated: { this.renderTime(time)}
               </div>
                 <form className="form-horizontal">
                   <div className="form-group">
