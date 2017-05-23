@@ -6,8 +6,7 @@ class CurrencyConvertUI extends Component {
     console.log('PROPS: ', this.props);
     const quotes = this.props.quotes;
     const currencyList = this.props.currencies;
-    const rate = this.props.rate;
-    console.log('===', rate);
+    const rate = this.props.rate || 0;
     let columns;
     let currency;
     if (quotes) {
@@ -51,6 +50,7 @@ class CurrencyConvertUI extends Component {
                     </div>
                     <div className="col-md-6 col-sm-6 col-xs-6">
                       <select className="form-control" onChange={this.props.onChange.bind(this)} >
+                        <option>Select currency</option>
                         { currency }
                       </select>
                     </div>
