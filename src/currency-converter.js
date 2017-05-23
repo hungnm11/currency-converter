@@ -16,10 +16,11 @@ class CurrencyConvert extends React.Component {
   }
 
   onHandleChange(e) {
-    const val = e.target.value;
+    const val = parseFloat(e.target.value);
+    const rate = parseFloat(this.state.rate);
     if (this.state.rate) {
-      const total = this.state.rate * val;
-      console.log('onHandleChange', total);
+      this.state.total = rate * val;
+      this.setState(this.state);
     }
   }
 
@@ -68,6 +69,7 @@ class CurrencyConvert extends React.Component {
       data.currencies = res.currencies;
       data.timestamp = res.timestamp;
       data.rate = this.state.rate || 0;
+      data.total = this.state.total || 0;
     }
     return data;
   }
