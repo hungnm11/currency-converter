@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 
 class CurrencyForm extends Component {
+
   render() {
+    console.log('PROPS', this.props);
     const currencyList = this.props.currencies;
     const rate = this.props.rate || 0;
     let currency;
@@ -18,7 +20,7 @@ class CurrencyForm extends Component {
       <form className="form-horizontal">
         <div className="form-group">
         <div className="col-md-6 col-sm-6 col-xs-6">
-          <input type="text" className="form-control" defaultValue="1" />
+          <input type="text" className="form-control" defaultValue="1" onChange={this.props.onHandleChange.bind(this)} />
         </div>
         <div className="col-md-6 col-sm-6 col-xs-6">
           <select className="form-control" disabled>

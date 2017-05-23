@@ -8,10 +8,19 @@ class CurrencyConvert extends React.Component {
     this.state = {};
     this.getData = this.getData.bind(this);
     this.onChange = this.onChange.bind(this);
+    this.onHandleChange = this.onHandleChange.bind(this);
   }
 
   componentDidMount() {
     this.getData();
+  }
+
+  onHandleChange(e) {
+    const val = e.target.value;
+    if (this.state.rate) {
+      const total = this.state.rate * val;
+      console.log('onHandleChange', total);
+    }
   }
 
   onChange(e) {
@@ -58,7 +67,7 @@ class CurrencyConvert extends React.Component {
       data.source = res.source;
       data.currencies = res.currencies;
       data.timestamp = res.timestamp;
-      data.rate = this.state.rate;
+      data.rate = this.state.rate || 0;
     }
     return data;
   }
@@ -69,6 +78,7 @@ class CurrencyConvert extends React.Component {
     return (
       <CurrencyUI {...data} 
         onChange={this.onChange}
+        onHandleChange={this.onHandleChange}
       />
     );
   }
