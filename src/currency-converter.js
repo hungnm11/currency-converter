@@ -23,6 +23,11 @@ class CurrencyConvert extends React.Component {
 
     _getData(paramCurr).then(rate => {
       console.log('RATE',rate);
+      
+      Object.keys(rate.quotes).map(r => { 
+        this.state.rate = rate.quotes[r];
+      });
+      this.setState(this.state);
     });
   }
 
@@ -52,13 +57,14 @@ class CurrencyConvert extends React.Component {
       data.quotes = res.quotes;
       data.source = res.source;
       data.currencies = res.currencies;
+      data.rate = this.state.rate;
     }
     return data;
   }
 
   render() {
     const data = this.processData();
-   
+    console.log('STATE', this.state);
     return (
       <CurrencyUI {...data} 
         onChange={this.onChange}

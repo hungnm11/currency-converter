@@ -9,6 +9,7 @@ const access_key = '9af2d5555fd753d5b3fccb3a4c7a3341';
 
 let $fetch = (endpoint, params, method = METHOD.get) => {
   const uri = REST_API + endpoint + '?access_key=' + access_key;
+  console.log('TEST',Object.keys(params).length == 0 ? uri : uri + `&${paramsToQuery(params)}`);
   let requestPromise = null;
 
   switch (method) {
@@ -22,7 +23,7 @@ let $fetch = (endpoint, params, method = METHOD.get) => {
     case METHOD.get:
     default:
       // requestPromise = fetch(uri + (params ? `?${paramsToQuery(params)}` : ''));
-      requestPromise = fetch(Object.keys(params).length == 0 ? uri : uri + `?${paramsToQuery(params)}`);
+      requestPromise = fetch(Object.keys(params).length == 0 ? uri : uri + `&${paramsToQuery(params)}`);
       break;
   }
 
