@@ -57,6 +57,7 @@ class CurrencyConvert extends React.Component {
       data.quotes = res.quotes;
       data.source = res.source;
       data.currencies = res.currencies;
+      data.timestamp = res.timestamp;
       data.rate = this.state.rate;
     }
     return data;
