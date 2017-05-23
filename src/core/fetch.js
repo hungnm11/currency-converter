@@ -5,9 +5,12 @@ export const METHOD = {
   post: 'POST'
 };
 
-let $fetch = (urn, params, method = METHOD.get) => {
-  const uri = REST_API + urn;
+const access_key = '9af2d5555fd753d5b3fccb3a4c7a3341';
+
+let $fetch = (endpoint, params, method = METHOD.get) => {
+  const uri = REST_API + endpoint + '?access_key=' + access_key;
   let requestPromise = null;
+
   switch (method) {
     case METHOD.post:
       requestPromise = fetch(uri, {
@@ -18,7 +21,8 @@ let $fetch = (urn, params, method = METHOD.get) => {
       break;
     case METHOD.get:
     default:
-      requestPromise = fetch(uri + (params ? `?${paramsToQuery(params)}` : ''));
+      // requestPromise = fetch(uri + (params ? `?${paramsToQuery(params)}` : ''));
+      requestPromise = fetch(Object.keys(params).length == 0 ? uri : uri + `?${paramsToQuery(params)}`);
       break;
   }
 

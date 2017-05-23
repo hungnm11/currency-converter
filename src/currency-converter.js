@@ -15,19 +15,27 @@ class CurrencyConvert extends React.Component {
   }
 
   onChange(e) {
-    console.log('onChange', e);
+    console.log('onChange', e.target.value);
+    const val = e.target.value;
+    const paramCurr = {
+      currencies: val,
+    };
+
+    _getData(paramCurr).then(rate => {
+      console.log('RATE',rate);
+    });
   }
 
   getData() {
     const params = {
-      access_key: '9af2d5555fd753d5b3fccb3a4c7a3341'
+      // access_key: '9af2d5555fd753d5b3fccb3a4c7a3341',
     };
 
     _getData(params).then(data => {
       this.setState(
         Object.assign({}, this.state, { res: data })
         );
-      _getCurrencyList(params).then(currencyList => {
+      _getCurrencyList().then(currencyList => {
         const newState = this.state;
         const currencies = currencyList.currencies;
         newState.res.currencies = currencies;

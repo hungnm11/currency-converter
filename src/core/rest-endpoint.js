@@ -1,4 +1,4 @@
 export const REST_API = 'http://apilayer.net';
-export const LIVE = '/api/live';
-export const LIST_CURRENCIES = '/api/list';
-export const HISTORICAL = '/api/historical';
+export const ENDPOINT_LIVE = '/api/live';
+export const ENDPOINT_LIST_CURRENCIES = '/api/list';
+export const ENDPOINT_HISTORICAL = '/api/historical';
