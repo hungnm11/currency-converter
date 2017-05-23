@@ -25,7 +25,7 @@ class CurrencyConvertUI extends Component {
     if (currencyList) {
       currency = Object.keys(currencyList).map((curr, i) => {
         return (
-          <option value={curr} key={i} title={currencyList[curr]}>{curr}: {currencyList[curr]}</option>
+          <option value={curr} key={i} title={currencyList[curr]}>{curr}</option>
         );
       });
     }
