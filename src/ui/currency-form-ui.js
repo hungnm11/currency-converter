@@ -13,12 +13,12 @@ class CurrencyForm extends Component {
         );
       });
     }
-    
+
     return (
       <form className="form-horizontal">
         <div className="form-group">
         <div className="col-md-6 col-sm-6 col-xs-6">
-          <input type="text" className="form-control" value="1" readOnly/>
+          <input type="text" className="form-control" defaultValue="1" />
         </div>
         <div className="col-md-6 col-sm-6 col-xs-6">
           <select className="form-control" disabled>
