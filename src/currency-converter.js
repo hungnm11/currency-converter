@@ -72,7 +72,6 @@ class CurrencyConvert extends React.Component {
 
   render() {
     const data = this.processData();
-    console.log('STATE', this.state);
     return (
       <CurrencyUI {...data} 
         onChange={this.onChange}
