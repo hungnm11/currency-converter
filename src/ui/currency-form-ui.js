@@ -5,7 +5,7 @@ class CurrencyForm extends Component {
   render() {
     console.log('PROPS', this.props);
     const currencyList = this.props.currencies;
-    const rate = this.props.rate || 0;
+    const rate = this.props.rate * this.props.dollar || 0;
     let currency;
 
     if (currencyList) {

@@ -16,16 +16,11 @@ class CurrencyConvert extends React.Component {
   }
 
   onHandleChange(e) {
-    const val = parseFloat(e.target.value);
-    const rate = parseFloat(this.state.rate);
-    if (this.state.rate) {
-      this.state.total = rate * val;
-      this.setState(this.state);
-    }
+    this.state.dollar = parseFloat(e.target.value);
+    this.setState(this.state);
   }
 
   onChange(e) {
-    console.log('onChange', e.target.value);
     const val = e.target.value;
     const paramCurr = {
       currencies: val,
@@ -70,6 +65,7 @@ class CurrencyConvert extends React.Component {
       data.timestamp = res.timestamp;
       data.rate = this.state.rate || 0;
       data.total = this.state.total || 0;
+      data.dollar = this.state.dollar || 1;
     }
     return data;
   }
